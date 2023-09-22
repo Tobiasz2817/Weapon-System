@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class LaserGun : EnergyWeapons
+public class LaserGun : EnergyWeapon
 {
     private Coroutine laserCoroutine;
     private CameraRay ray;
@@ -11,10 +11,12 @@ public class LaserGun : EnergyWeapons
     }
 
     protected override void ProcessWeaponAction() {
+        base.ProcessWeaponAction();
         laserCoroutine = StartCoroutine(ProcessLaserShoot());
     }
 
     protected override void ReleaseWeaponAction() {
+        base.ReleaseWeaponAction();
         if(laserCoroutine != null)
             StopCoroutine(laserCoroutine);
         

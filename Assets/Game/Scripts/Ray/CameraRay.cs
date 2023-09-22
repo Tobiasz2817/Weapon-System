@@ -7,6 +7,7 @@ public class CameraRay : MonoBehaviour
     [SerializeField] private InputActionReference inputRayReference;
     [SerializeField] private LayerMask rayMask;
     [SerializeField] private float basedMaxDistance = 1000;
+    [SerializeField] private bool displayRay = false;
     
     private Vector2 mouseLastInput;
 
@@ -25,10 +26,12 @@ public class CameraRay : MonoBehaviour
     private void ReadMousePosition(InputAction.CallbackContext obj) {
         mouseLastInput = obj.ReadValue<Vector2>();
         var raycast = GetRay(mouseLastInput,rayMask,basedMaxDistance);
+        if (raycast.point == default) return;
         OnDetected?.Invoke(raycast);
     }
     
     
+    public RaycastHit GetRay() => GetRay(mouseLastInput, rayMask,basedMaxDistance);
     public RaycastHit GetRay(LayerMask layerMask) => GetRay(mouseLastInput,layerMask,basedMaxDistance);
     public RaycastHit GetRay(float maxDistance) => GetRay(mouseLastInput,rayMask,maxDistance);
     public RaycastHit GetRay(LayerMask layerMask, float maxDistance) =>  GetRay(mouseLastInput,layerMask,maxDistance);
@@ -51,6 +54,7 @@ public class CameraRay : MonoBehaviour
 
 
     private void Update() {
+        if (!displayRay) return;
         var ray = GetRay(mouseLastInput, rayMask, basedMaxDistance);
         Debug.DrawLine(UnityEngine.Camera.main.transform.position,ray.point,Color.black);
     }
