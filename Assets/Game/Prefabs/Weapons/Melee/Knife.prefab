@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ae32a72bfa24547b1793890c9bb44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Knfie
+  weaponName: Knife
   weaponDamage: 45
   baseInput: {fileID: 5384824949599212169}
   durability: 100

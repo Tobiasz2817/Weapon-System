@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380b456190dd2be4fbe46a48df85f5ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: LaserGun
+  weaponName: Laser
   weaponDamage: 5
   baseInput: {fileID: -8689549546415621512}
   firePoint: {fileID: 2823664044638107312}

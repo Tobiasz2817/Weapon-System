@@ -17,6 +17,6 @@ public class WeaponInterface : MonoBehaviour
     
     private void RefreshInterface(Weapon weapon) {
         weaponNameText.text = weapon.GetWeaponName();
-        weaponDamageText.text = weapon.GetWeaponDamage().ToString();
+        weaponDamageText.text = weapon.GetWeaponDamage().ToString() + " Damage";
     }
 }

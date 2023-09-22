@@ -270,7 +270,7 @@ MonoBehaviour:
   recoil: 50
   bulletPrefab: {fileID: 3696565912506325346, guid: a682c812b7f372e488c3227e8e6c19e8, type: 3}
   countProjectiles: 0
-  bulletPower: 800
+  gunPower: 700
 --- !u!114 &5354895939662486666
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ public abstract class ProjectileWeapon : FirearmWeapon
     [Header("Projectile Dependencies")]
     [SerializeField] protected GameObject bulletPrefab;
     [SerializeField] protected float countProjectiles;
-    [SerializeField] protected float bulletPower = 300;
+    [SerializeField] protected float gunPower = 700;
     
     
     protected virtual void BaseShoot() {
@@ -14,7 +14,7 @@ public abstract class ProjectileWeapon : FirearmWeapon
         var bullet = Instantiate(bulletPrefab, firePoint.position, targetRotation);
         var bulletRb = bullet.GetComponent<Rigidbody>();
                 
-        bulletRb.AddForce(firePoint.forward * bulletPower * Time.fixedDeltaTime,ForceMode.Impulse);
+        bulletRb.AddForce(firePoint.forward * gunPower * Time.fixedDeltaTime,ForceMode.Impulse);
                 
         ResetFireRate();
     }
